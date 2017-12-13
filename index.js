@@ -1,7 +1,7 @@
 exports.spanify = function spanify() {
   /*
    * Possibly limit it to certain paragraphs
-   * Make it scan the hole page for now
+   * Make it scan the whole page for now
    */
   // const myElement = document.querySelector('[name="classify"]');
   // const paragraph = myElement.nextElementSibling;
