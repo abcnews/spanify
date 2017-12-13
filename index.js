@@ -1,16 +1,18 @@
+"use strict";
+
 exports.spanify = function spanify() {
   // Get an array of all the anchor elements on the page
-  const anchors = document.querySelectorAll("a");
- 
+  var anchors = document.querySelectorAll("a");
+
   // Loop through all the anchors
-  anchors.forEach(anchor => {
+  anchors.forEach(function (anchor) {
     // Leave normal links on the page alone
     if (anchor.innerHTML !== " ") return;
     // Leave #hashtag links alone
     if (!anchor.getAttribute("title")) return;
 
     // The anchor title will later become the span class
-    const elementTitle = anchor.getAttribute("title");
+    var elementTitle = anchor.getAttribute("title");
 
     // If it is an "end" tag it will already have made the span
     if (elementTitle.slice(0, 3) === "end") {
@@ -20,10 +22,10 @@ exports.spanify = function spanify() {
     }
 
     // Compose our span element
-    const spanEl = document.createElement("span");
+    var spanEl = document.createElement("span");
     spanEl.setAttribute("class", elementTitle);
     // Store the text in between the two anchor tags
-    const spanTextEl = anchor.nextSibling;
+    var spanTextEl = anchor.nextSibling;
     spanEl.innerHTML = spanTextEl.textContent.trim();
 
     // To replace the anchor apparently the span needs to be appended
