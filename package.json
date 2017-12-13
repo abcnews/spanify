@@ -1,12 +1,15 @@
 {
   "name": "spanify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helper for CoreMedia to turn anchor tags into spans",
   "main": "index.js",
   "scripts": {
     "test": "npm test"
   },
-  "keywords": ["javascript", "coremedia"],
+  "keywords": [
+    "javascript",
+    "coremedia"
+  ],
   "author": "Joshua Byrd <phocks@gmail.com> (http://phocks.org)",
   "license": "MIT",
   "repository": {
