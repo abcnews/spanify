@@ -6,10 +6,11 @@
   "scripts": {
     "test": "npm test"
   },
-  "keywords": [
-    "javascript",
-    "coremedia"
-  ],
-  "author": "Joshua Byrd <phocks@gmail.com>",
-  "license": "MIT"
+  "keywords": ["javascript", "coremedia"],
+  "author": "Joshua Byrd <phocks@gmail.com> (http://phocks.org)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phocks/spanify.git"
+  }
 }
