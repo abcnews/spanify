@@ -7,3 +7,11 @@ In CoreMedia put 3 spaces before the text you want to wrap in a span tag. Then s
 `npm install spanify` it into your project, then `const spanify = require("spanify")`.
 
 And then call `spanify.spanify()` to scan the page for these anchor tags and replace them with spans.
+
+Essentially this script scans the DOM for `<a title="whatever"> </a> some text <a title="end"> </a>` and converts to `<span class="whatever">some text</span>`
+
+## Hashify
+
+Sometimes in CoreMedia we use #hashtag links. If you put a #hastag on its own line it turns into `<a name="hashtag"> </a>`. This is fine until you want to append content to this element. Any text inside this anchor tag will have link styles applied to it.
+
+To workaround this we can use `spanify.hashify()` to scan the page for these anchor tags and replace them with `<div class="whatever"></div>`
