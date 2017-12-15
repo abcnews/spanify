@@ -7,7 +7,7 @@ exports.spanify = function spanify() {
   var anchors = document.querySelectorAll("a");
 
   // Loop through all the anchors (we need to use an array hack for IE/Edge support)
-  [].forEach.call(anchors, function (anchor) {
+  [].forEach.call(anchors, function(anchor) {
     // Leave normal links on the page alone
     if (anchor.innerHTML !== " ") return;
     // Leave #hashtag links alone
@@ -47,7 +47,7 @@ exports.divify = function divify() {
   var anchors = document.querySelectorAll("a");
 
   // Loop through all the anchors (we need to use an array hack for IE/Edge support)
-  [].forEach.call(anchors, function (anchor) {
+  [].forEach.call(anchors, function(anchor) {
     // Leave normal links on the page alone
     if (anchor.innerHTML !== " ") return;
     // Leave #hashtag links alone
