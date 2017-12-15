@@ -42,7 +42,7 @@ exports.spanify = function spanify() {
 
 // Scans DOM for <a name="whatever"> </a>
 // and converts to <div class="whatever"></div>
-exports.divify = function divify() {
+exports.hashify = function hashify() {
   // Get an array of all the anchor elements on the page
   var anchors = document.querySelectorAll("a");
 
