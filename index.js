@@ -2,7 +2,6 @@
 
 // Scans DOM for <a title="whatever"> </a> some text <a title="end"> </a>
 // and converts to <span class="whatever">some text</span>
-
 exports.spanify = function spanify() {
   // Get an array of all the anchor elements on the page
   var anchors = document.querySelectorAll("a");

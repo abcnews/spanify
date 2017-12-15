@@ -8,7 +8,8 @@
   },
   "keywords": [
     "javascript",
-    "coremedia"
+    "coremedia",
+    "DOM"
   ],
   "author": "Joshua Byrd <phocks@gmail.com> (http://phocks.org)",
   "license": "MIT",
