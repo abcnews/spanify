@@ -2,7 +2,8 @@
 
 // Scans DOM for <a title="whatever"> </a> some text <a title="end"> </a>
 // and converts to <span class="whatever">some text</span>
-exports.spanify = function spanify() {
+
+exports.spanify = function spanify(options) {
   // Get an array of all the anchor elements on the page
   var anchors = document.querySelectorAll("a");
 
@@ -26,6 +27,12 @@ exports.spanify = function spanify() {
     // Compose our span element
     var spanEl = document.createElement("span");
     spanEl.setAttribute("class", elementTitle);
+
+    // Add a default class if passed one
+    if (options && options.defaultClass) {
+      addClass(spanEl, options.defaultClass);
+    }
+
     // Store the text in between the two anchor tags
     var spanTextEl = anchor.nextSibling;
     spanEl.innerHTML = spanTextEl.textContent.trim();
@@ -42,7 +49,7 @@ exports.spanify = function spanify() {
 
 // Scans DOM for <a name="whatever"> </a>
 // and converts to <div class="whatever"></div>
-exports.hashify = function hashify() {
+exports.hashify = function hashify(options) {
   // Get an array of all the anchor elements on the page
   var anchors = document.querySelectorAll("a");
 
@@ -62,7 +69,18 @@ exports.hashify = function hashify() {
     var divEl = document.createElement("div");
     divEl.setAttribute("class", elementName);
 
+    // Add a default class if passed one
+    if (options && options.defaultClass) {
+      addClass(divEl, options.defaultClass);
+    }
+
     // Replace anchor with div
     anchor.parentNode.replaceChild(divEl, anchor);
   });
 };
+
+// Some convenience methods
+function addClass(el, className) {
+  if (el.classList) el.classList.add(className);
+  else if (!hasClass(el, className)) el.className += " " + className;
+}
