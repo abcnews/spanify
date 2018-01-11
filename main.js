@@ -1,10 +1,10 @@
 // Pollyfill for IE11 forEach through browser node arrays
 if (window.NodeList && !NodeList.prototype.forEach) {
-  NodeList.prototype.forEach = function (callback, thisArg) {
-      thisArg = thisArg || window;
-      for (var i = 0; i < this.length; i++) {
-          callback.call(thisArg, this[i], i, this);
-      }
+  NodeList.prototype.forEach = function(callback, thisArg) {
+    thisArg = thisArg || window;
+    for (var i = 0; i < this.length; i++) {
+      callback.call(thisArg, this[i], i, this);
+    }
   };
 }
 
@@ -40,17 +40,26 @@ export function spanify(options) {
       addClass(spanEl, options.defaultClass);
     }
 
-    // Store the text in between the two anchor tags
-    const spanTextEl = anchor.nextSibling;
-    spanEl.innerHTML = spanTextEl.textContent.trim();
+    if (
+      anchor.nextElementSibling &&
+      anchor.nextElementSibling.getAttribute("title").slice(0, 3) === "end"
+    ) {
+      // Store the text in between the two anchor tags
+      const spanTextEl = anchor.nextSibling;
+      spanEl.innerHTML = spanTextEl.textContent.trim();
 
-    // To replace the anchor apparently the span needs to be appended
-    anchor.parentNode.appendChild(spanEl);
+      // To replace the anchor apparently the span needs to be appended
+      anchor.parentNode.appendChild(spanEl);
 
-    // Replace the first anchor tag
-    anchor.parentNode.replaceChild(spanEl, anchor);
-    // Remove the remaining in between text
-    spanTextEl.parentNode.removeChild(spanTextEl);
+      // Replace the first anchor tag
+      anchor.parentNode.replaceChild(spanEl, anchor);
+      // Remove the remaining in between text
+      spanTextEl.parentNode.removeChild(spanTextEl);
+    } else {
+      // If single anchor without enclosing text simply convert directly
+      anchor.parentNode.appendChild(spanEl);
+      anchor.parentNode.replaceChild(spanEl, anchor);
+    }
   });
 }
 
