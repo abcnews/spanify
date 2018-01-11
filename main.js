@@ -1,12 +1,21 @@
+// Pollyfill for IE11 forEach through browser node arrays
+if (window.NodeList && !NodeList.prototype.forEach) {
+  NodeList.prototype.forEach = function (callback, thisArg) {
+      thisArg = thisArg || window;
+      for (var i = 0; i < this.length; i++) {
+          callback.call(thisArg, this[i], i, this);
+      }
+  };
+}
+
 // Scans DOM for <a title="whatever"> </a> some text <a title="end"> </a>
 // and converts to <span class="whatever">some text</span>
-
 export function spanify(options) {
   // Get an array of all the anchor elements on the page
   const anchors = document.querySelectorAll("a");
 
   // Loop through all the anchors (we need to use an array hack for IE/Edge support)
-  [].forEach.call(anchors, anchor => {
+  anchors.forEach(anchor => {
     // Leave normal links on the page alone
     if (anchor.innerHTML !== " ") return;
     // Leave #hashtag links alone
@@ -52,7 +61,7 @@ export function hashify(options) {
   const anchors = document.querySelectorAll("a");
 
   // Loop through all the anchors (we need to use an array hack for IE/Edge support)
-  [].forEach.call(anchors, anchor => {
+  anchors.forEach(anchor => {
     // Leave normal links on the page alone
     if (anchor.innerHTML !== " ") return;
     // Leave #hashtag links alone
