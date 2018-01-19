@@ -14,7 +14,7 @@ export function spanify(options) {
   // Get an array of all the anchor elements on the page
   const anchors = document.querySelectorAll("a");
 
-  // Loop through all the anchors (we need to use an array hack for IE/Edge support)
+  // Loop through all the anchor nodes
   anchors.forEach(anchor => {
     // Leave normal links on the page alone
     if (anchor.innerHTML !== " ") return;
@@ -69,7 +69,7 @@ export function hashify(options) {
   // Get an array of all the anchor elements on the page
   const anchors = document.querySelectorAll("a");
 
-  // Loop through all the anchors (we need to use an array hack for IE/Edge support)
+  // Loop through all the anchor nodes
   anchors.forEach(anchor => {
     // Leave normal links on the page alone
     if (anchor.innerHTML !== " ") return;
