@@ -19,3 +19,5 @@ Sometimes in CoreMedia we use #hashtag links. If you put a #hastag on its own li
 To workaround this we can use `spanify.hashify()` to scan the page for these anchor tags and replace them with `<div class="whatever"></div>`
 
 You can also specify a default class that will be added to the div in addition to any classes specified in CoreMedia by passing an object to the function like this `spanify.hashify({ defaultClass: "default" })`.
+
+To hashify only certain #hashtag links pass something like this `spanify.hashify({ hashList: ["addressinput", "incomeinput"] });`
