@@ -5,13 +5,14 @@ export default {
   input: "main.js",
   output: {
     file: "index.js",
-    format: "cjs",
+    format: "umd",
     name: "spanify"
   },
   plugins: [
     babel({
       exclude: 'node_modules/**' // only transpile our source code
-    }),
-    uglify()
+    })
+    // ,
+    // uglify()
   ]
 }

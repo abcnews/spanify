@@ -4,7 +4,8 @@
   "description": "Helper for CoreMedia to turn anchor tags into spans",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "build": "rollup -c"
   },
   "keywords": [
     "javascript",

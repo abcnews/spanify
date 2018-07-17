@@ -1,1 +1,111 @@
-"use strict";function spanify(e){document.querySelectorAll("a").forEach(function(t){if(" "===t.innerHTML&&t.getAttribute("title")){var i=t.getAttribute("title");if("end"!==i.slice(0,3)){var a=document.createElement("span");if(a.setAttribute("class",i),e&&e.defaultClass&&addClass(a,e.defaultClass),t.nextElementSibling&&"end"===t.nextElementSibling.getAttribute("title").slice(0,3)){var n=t.nextSibling;a.innerHTML=n.textContent.trim(),t.parentNode.appendChild(a),t.parentNode.replaceChild(a,t),n.parentNode.removeChild(n)}else t.parentNode.appendChild(a),t.parentNode.replaceChild(a,t)}else t.parentNode.removeChild(t)}})}function hashify(e){document.querySelectorAll("a").forEach(function(t){if(" "===t.innerHTML&&!t.getAttribute("title")&&t.getAttribute("name")){var i=t.getAttribute("name"),a=document.createElement("div");a.setAttribute("class",i),e&&e.defaultClass&&addClass(a,e.defaultClass),t.parentNode.replaceChild(a,t)}})}function addClass(e,t){e.classList?e.classList.add(t):hasClass(e,t)||(e.className+=" "+t)}Object.defineProperty(exports,"__esModule",{value:!0}),window.NodeList&&!NodeList.prototype.forEach&&(NodeList.prototype.forEach=function(e,t){t=t||window;for(var i=0;i<this.length;i++)e.call(t,this[i],i,this)}),exports.spanify=spanify,exports.hashify=hashify;
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+  typeof define === 'function' && define.amd ? define(['exports'], factory) :
+  (factory((global.spanify = {})));
+}(this, (function (exports) { 'use strict';
+
+  // Pollyfill for IE11 forEach through browser node arrays
+  if (window.NodeList && !NodeList.prototype.forEach) {
+    NodeList.prototype.forEach = function (callback, thisArg) {
+      thisArg = thisArg || window;
+      for (var i = 0; i < this.length; i++) {
+        callback.call(thisArg, this[i], i, this);
+      }
+    };
+  }
+
+  // Scans DOM for <a title="whatever"> </a> some text <a title="end"> </a>
+  // and converts to <span class="whatever">some text</span>
+  function spanify(options) {
+    // Get an array of all the anchor elements on the page
+    var anchors = document.querySelectorAll("a");
+
+    // Loop through all the anchor nodes
+    anchors.forEach(function (anchor) {
+      // Leave normal links on the page alone
+      if (anchor.innerHTML !== " ") return;
+      // Leave #hashtag links alone
+      if (!anchor.getAttribute("title")) return;
+
+      // The anchor title will later become the span class
+      var elementTitle = anchor.getAttribute("title");
+
+      // If it is an "end" tag it will already have made the span
+      if (elementTitle.slice(0, 3) === "end") {
+        // So we don't need it any more...
+        anchor.parentNode.removeChild(anchor);
+        return;
+      }
+
+      // Compose our span element
+      var spanEl = document.createElement("span");
+      spanEl.setAttribute("class", elementTitle);
+
+      // Add a default class if passed one
+      if (options && options.defaultClass) {
+        addClass(spanEl, options.defaultClass);
+      }
+
+      if (anchor.nextElementSibling && anchor.nextElementSibling.getAttribute("title").slice(0, 3) === "end") {
+        // Store the text in between the two anchor tags
+        var spanTextEl = anchor.nextSibling;
+        spanEl.innerHTML = spanTextEl.textContent.trim();
+
+        // To replace the anchor apparently the span needs to be appended
+        anchor.parentNode.appendChild(spanEl);
+
+        // Replace the first anchor tag
+        anchor.parentNode.replaceChild(spanEl, anchor);
+        // Remove the remaining in between text
+        spanTextEl.parentNode.removeChild(spanTextEl);
+      } else {
+        // If single anchor without enclosing text simply convert directly
+        anchor.parentNode.appendChild(spanEl);
+        anchor.parentNode.replaceChild(spanEl, anchor);
+      }
+    });
+  }
+
+  // Scans DOM for <a name="whatever"> </a>
+  // and converts to <div class="whatever"></div>
+  function hashify(options) {
+    // Get an array of all the anchor elements on the page
+    var anchors = document.querySelectorAll("a");
+
+    // Loop through all the anchor nodes
+    anchors.forEach(function (anchor) {
+      // Leave normal links on the page alone
+      if (anchor.innerHTML !== " ") return;
+      // Leave #hashtag links alone
+      if (anchor.getAttribute("title")) return;
+      // Make sure it's really a #hashlink
+      if (!anchor.getAttribute("name")) return;
+
+      // The anchor title will later become the span class
+      var elementName = anchor.getAttribute("name");
+
+      // Compose our new div element
+      var divEl = document.createElement("div");
+      divEl.setAttribute("class", elementName);
+
+      // Add a default class if passed one
+      if (options && options.defaultClass) {
+        addClass(divEl, options.defaultClass);
+      }
+
+      // Replace anchor with div
+      anchor.parentNode.replaceChild(divEl, anchor);
+    });
+  }
+
+  // Some convenience methods
+  function addClass(el, className) {
+    if (el.classList) el.classList.add(className);else if (!hasClass(el, className)) el.className += " " + className;
+  }
+
+  exports.spanify = spanify;
+  exports.hashify = hashify;
+
+  Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
