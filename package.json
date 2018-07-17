@@ -1,6 +1,6 @@
 {
   "name": "spanify",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Helper for CoreMedia to turn anchor tags into spans",
   "main": "index.js",
   "scripts": {
