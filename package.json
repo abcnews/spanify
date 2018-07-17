@@ -3,6 +3,7 @@
   "version": "1.2.7",
   "description": "Helper for CoreMedia to turn anchor tags into spans",
   "main": "index",
+  "typings": "index",
   "scripts": {
     "test": "npm test",
     "build": "rollup -c"
