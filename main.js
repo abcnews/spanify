@@ -78,6 +78,11 @@ export function hashify(options) {
     // Make sure it's really a #hashlink
     if (!anchor.getAttribute("name")) return;
 
+    // Conditional transform of hashes - only hashify if in hashList: ["hashname", "another"]
+    if (options && options.hashList) {
+      if (options.hashList.indexOf(anchor.getAttribute("name")) === -1) return;
+    }
+
     // The anchor title will later become the span class
     const elementName = anchor.getAttribute("name");
 
