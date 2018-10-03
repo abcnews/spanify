@@ -37,10 +37,10 @@ packages:
       babel-traverse: 6.26.0
       babel-types: 6.26.0
       babylon: 6.18.0
-      convert-source-map: 1.5.1
+      convert-source-map: 1.6.0
       debug: 2.6.9
       json5: 0.5.1
-      lodash: 4.17.10
+      lodash: 4.17.11
       minimatch: 3.0.4
       path-is-absolute: 1.0.1
       private: 0.1.8
@@ -56,7 +56,7 @@ packages:
       babel-types: 6.26.0
       detect-indent: 4.0.0
       jsesc: 1.3.0
-      lodash: 4.17.10
+      lodash: 4.17.11
       source-map: 0.5.7
       trim-right: 1.0.1
     dev: true
@@ -84,7 +84,7 @@ packages:
       babel-helper-function-name: 6.24.1
       babel-runtime: 6.26.0
       babel-types: 6.26.0
-      lodash: 4.17.10
+      lodash: 4.17.11
     dev: true
     resolution:
       integrity: sha1-pfVtq0GiX5fstJjH66ypgZ+Vvl8=
@@ -131,7 +131,7 @@ packages:
     dependencies:
       babel-runtime: 6.26.0
       babel-types: 6.26.0
-      lodash: 4.17.10
+      lodash: 4.17.11
     dev: true
     resolution:
       integrity: sha1-MlxZ+QL4LyS3T6zu0DY5VPZJXnI=
@@ -219,7 +219,7 @@ packages:
       babel-template: 6.26.0
       babel-traverse: 6.26.0
       babel-types: 6.26.0
-      lodash: 4.17.10
+      lodash: 4.17.11
     dev: true
     resolution:
       integrity: sha1-1w9SmcEwjQXBL0Y4E7CgnnOxiV8=
@@ -421,7 +421,7 @@ packages:
       babel-plugin-transform-regenerator: 6.26.0
       browserslist: 3.2.8
       invariant: 2.2.4
-      semver: 5.5.0
+      semver: 5.5.1
     dev: true
     resolution:
       integrity: sha512-9OR2afuKDneX2/q2EurSftUYM0xGu4O2D9adAhVfADDhrYDaxXV0rBbevVYoY9n6nyX1PmQW/0jtpJvUNr9CHg==
@@ -431,7 +431,7 @@ packages:
       babel-runtime: 6.26.0
       core-js: 2.5.7
       home-or-tmp: 2.0.0
-      lodash: 4.17.10
+      lodash: 4.17.11
       mkdirp: 0.5.1
       source-map-support: 0.4.18
     dev: true
@@ -450,7 +450,7 @@ packages:
       babel-traverse: 6.26.0
       babel-types: 6.26.0
       babylon: 6.18.0
-      lodash: 4.17.10
+      lodash: 4.17.11
     dev: true
     resolution:
       integrity: sha1-3gPi0WOWsGn0bdn/+FIfsaDjXgI=
@@ -464,7 +464,7 @@ packages:
       debug: 2.6.9
       globals: 9.18.0
       invariant: 2.2.4
-      lodash: 4.17.10
+      lodash: 4.17.11
     dev: true
     resolution:
       integrity: sha1-RqnL1+3MYsjlwGTi0tjQ9ANXZu4=
@@ -472,7 +472,7 @@ packages:
     dependencies:
       babel-runtime: 6.26.0
       esutils: 2.0.2
-      lodash: 4.17.10
+      lodash: 4.17.11
       to-fast-properties: 1.0.3
     dev: true
     resolution:
@@ -495,16 +495,16 @@ packages:
       integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==
   /browserslist/3.2.8:
     dependencies:
-      caniuse-lite: 1.0.30000865
-      electron-to-chromium: 1.3.52
+      caniuse-lite: 1.0.30000889
+      electron-to-chromium: 1.3.73
     dev: true
     hasBin: true
     resolution:
       integrity: sha512-WHVocJYavUwVgVViC0ORikPHQquXwVh939TaelZ4WDqpWgTX/FsGhl/+P4qBUAGcRvtOgDgC+xftNWWp2RUTAQ==
-  /caniuse-lite/1.0.30000865:
+  /caniuse-lite/1.0.30000889:
     dev: true
     resolution:
-      integrity: sha512-vs79o1mOSKRGv/1pSkp4EXgl4ZviWeYReXw60XfacPU64uQWZwJT6vZNmxRF9O+6zu71sJwMxLK5JXxbzuVrLw==
+      integrity: sha512-MFxcQ6x/LEEoaIhO7Zdb7Eg8YyNONN+WBnS5ERJ0li2yRw51+i4xXUNxnLaveTb/4ZoJqsWKEmlomhG2pYzlQA==
   /chalk/1.1.3:
     dependencies:
       ansi-styles: 2.2.1
@@ -517,18 +517,20 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-qBFcVeSnAv5NFQq9OHKCKn4J/Jg=
-  /commander/2.16.0:
+  /commander/2.17.1:
     dev: true
     resolution:
-      integrity: sha512-sVXqklSaotK9at437sFlFpyOcJonxe0yST/AG9DkQKUdIE6IqGIMv4SfAQSKaJbSdVEJYItASCrBiVQHq1HQew==
+      integrity: sha512-wPMUt6FnH2yzG95SA6mzjQOEKUU3aLaDEmzs1ti+1E9h+CsrZghRlqEM/EJ4KscsQVG8uNN4uVreUeT8+drlgg==
   /concat-map/0.0.1:
     dev: true
     resolution:
       integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
-  /convert-source-map/1.5.1:
+  /convert-source-map/1.6.0:
+    dependencies:
+      safe-buffer: 5.1.2
     dev: true
     resolution:
-      integrity: sha1-uCeAl7m8IpNl3lxiz1/K7YtVmeU=
+      integrity: sha512-eFu7XigvxdZ1ETfbgPBohgyQ/Z++C0eEhTor0qRwBw9unw+L0/6V8wkSuGgzdThkiS5lSpdptOQPD8Ak40a+7A==
   /core-js/2.5.7:
     dev: true
     resolution:
@@ -547,10 +549,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-920GQ1LN9Docts5hnE7jqUdd4gg=
-  /electron-to-chromium/1.3.52:
+  /electron-to-chromium/1.3.73:
     dev: true
     resolution:
-      integrity: sha1-0tnxJwuko7lnuDHEDvcftNmrXOA=
+      integrity: sha512-6PIg7v9zRoVGh6EheRF8h6Plti+3Yo/qtHobS4/Htyt53DNHmKKGFqSae1AIk0k1S4gCQvt7I2WgpbuZNcDY+g==
   /escape-string-regexp/1.0.5:
     dev: true
     engines:
@@ -627,10 +629,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-Hq3nrMASA0rYTiOWdn6tn6VJWCE=
-  /lodash/4.17.10:
+  /lodash/4.17.11:
     dev: true
     resolution:
-      integrity: sha512-UejweD1pDoXu+AD825lWwp4ZGtSwgnpZxb3JDViD7StjQz+Nb/6l093lx4OQ0foGWNRoc19mWy7BzL+UAK2iVg==
+      integrity: sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
   /loose-envify/1.4.0:
     dependencies:
       js-tokens: 4.0.0
@@ -742,7 +744,7 @@ packages:
       integrity: sha512-bVe2y0z/V5Ax1qU8NX/0idmzIwJPdUGu8Xx3vXH73h0yGjxfv2gkFI82MBVg49SlsFlLTBadBHb67zy4TWM3hA==
   /rollup-plugin-uglify/2.0.1:
     dependencies:
-      uglify-js: 3.4.4
+      uglify-js: 3.4.9
     dev: true
     resolution:
       integrity: sha1-Z7N60e/a+9g69MNrQMGJ7khmyWk=
@@ -753,11 +755,15 @@ packages:
     dev: true
     resolution:
       integrity: sha1-HhVud4+UtyVb+hs9AXi+j1xVJAg=
-  /semver/5.5.0:
+  /safe-buffer/5.1.2:
+    dev: true
+    resolution:
+      integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
+  /semver/5.5.1:
     dev: true
     hasBin: true
     resolution:
-      integrity: sha512-4SJ3dm0WAwWy/NVeioZh5AntkdJoWKxHxcmyP622fOkgHa4z3R0TdBJICINyaSDE6uNwVc8gZr+ZinwZAH4xIA==
+      integrity: sha512-PqpAxfrEhlSUWge8dwIp4tZnQ25DIOthpiaHNIthsjEFQD6EvqUKUDM7L8O2rShkFccYo1VjJR0coWfNkCubRw==
   /slash/1.0.0:
     dev: true
     engines:
@@ -808,16 +814,16 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
-  /uglify-js/3.4.4:
+  /uglify-js/3.4.9:
     dependencies:
-      commander: 2.16.0
+      commander: 2.17.1
       source-map: 0.6.1
     dev: true
     engines:
       node: '>=0.8.0'
     hasBin: true
     resolution:
-      integrity: sha512-RiB1kNcC9RMyqwRrjXC+EjgLoXULoDnCaOnEDzUCHkBN0bHwmtF5rzDMiDWU29gu0kXCRRWwtcTAVFWRECmU2Q==
+      integrity: sha512-8CJsbKOtEbnJsTyv6LE6m6ZKniqMiFWmm9sRbopbkGs3gMPPfd3Fh8iIA4Ykv5MgaTbqHr4BaoGLJLZNhsrW1Q==
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
