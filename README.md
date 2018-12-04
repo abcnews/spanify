@@ -48,3 +48,13 @@ To hashify only certain #hashtag links pass something like this:
 ```js
 hashify({ hashList: ["addressinput", "incomeinput"] });
 ```
+
+## Classify
+
+Apply a class to the next paragraph (or other element)
+
+```js
+classify("class") // #prefix string to look for 
+```
+
+eg. #classintro adds `class="intro"` to proceeding paragraph.
